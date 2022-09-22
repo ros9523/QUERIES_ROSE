@@ -1,3 +1,15 @@
+
+CREATE TABLE "todos" (
+  "id" serial PRIMARY KEY,
+  "task" varchar(100) NOT NULL,
+  "description" text NOT NULL,
+  "is_completed" boolean DEFAULT false,
+  "deadline" timestamp NOT NULL,
+  "category" varchar(20),
+  "created_at" timestamp DEFAULT 'now()',
+  "updated_at" timestamp DEFAULT 'now()'
+);
+
 insert into todos (
 task,
 description,
