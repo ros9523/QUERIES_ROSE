@@ -85,19 +85,19 @@ insert into transactions (id, account_ori, account_des, amount, transaction_type
 
 create view v_clients_accounts as select clients.id, first_name, last_name, email, account_no, balance from clients left join accounts on clients.id = accounts.client_id;
 
-select * from v_clients_accounts 
+select * from v_clients_accounts; 
 
 --Ejercicio 2
 create view v_accounts_types as select account_no, client_id, name as tipo_cuenta from accounts inner join account_types on accounts.type= account_types.id;
 
-select * from v_accounts_types  
+select * from v_accounts_types;
 
 --Ejercicio 3
-create view v_transactions_detail as select transactions.id, amount, name from transactions left join transactions_types on transactions.transaction_type= transactions_types.id
+create view v_transactions_detail as select transactions.id, amount, name from transactions left join transactions_types on transactions.transaction_type= transactions_types.id;
 
-select * from  v_transactions_detail 
+select * from  v_transactions_detail;
 
 --Ejercicio 4
-create view v_transations_types_detail as  select transactions.id, amount, name from transactions right join transactions_types on transactions.transaction_type= transactions_types.id
+create view v_transations_types_detail as  select transactions.id, amount, name from transactions right join transactions_types on transactions.transaction_type= transactions_types.id;
 
-select * from v_transations_types_detail 
+select * from v_transations_types_detail; 
